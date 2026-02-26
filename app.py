@@ -257,11 +257,10 @@ def add_song_sidebar():
 
 def playlist_tabs(playlists):
     """Render playlists in tabs."""
-    include_mixed = st.session_state.profile.get("include_mixed", True)
+    
 
-    tab_labels = ["Hype", "Chill"]
-    if include_mixed:
-        tab_labels.append("Mixed")
+    tab_labels = ["Hype", "Chill", "Mixed"] if st.session_state.profile.get("include_mixed", True) else ["Hype", "Chill"]
+    
 
     tabs = st.tabs(tab_labels)
 
